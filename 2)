@@ -1,0 +1,25 @@
+import java.util.ArrayList;
+
+public class Fibonacci {
+
+    public static void main(String[] args) {
+        int n = 21; // número a ser verificado
+        ArrayList<Integer> fibonacci = new ArrayList<Integer>(); // lista para armazenar a sequência de Fibonacci
+        fibonacci.add(0); // adiciona o primeiro valor da sequência
+        fibonacci.add(1); // adiciona o segundo valor da sequência
+        
+        // calcula os valores da sequência de Fibonacci até encontrar um maior ou igual a n
+        while (fibonacci.get(fibonacci.size() - 1) < n) {
+            int proximo = fibonacci.get(fibonacci.size() - 1) + fibonacci.get(fibonacci.size() - 2);
+            fibonacci.add(proximo);
+        }
+        
+        // verifica se n é igual ao valor encontrado na sequência
+        if (fibonacci.contains(n)) {
+            System.out.println("O número informado pertence à sequência de Fibonacci");
+        } else {
+            System.out.println("O número informado não pertence à sequência de Fibonacci");
+        }
+    }
+
+}
